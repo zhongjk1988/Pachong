@@ -35,7 +35,7 @@ class get_apk_pakageName():
         else:
             print(path, '文件夹已经存在了，不再创建')
 
-    def logic(self)->dict:
+    def logic(self):
         file_name = 0
         apk_info = {}
         postfix = [".apk"]  # 设置要保存的文件格式
@@ -58,7 +58,7 @@ class get_apk_pakageName():
 
 if __name__=='__main__':
     GOOGLE_PATH = "https://play.google.com/store/apps/details?id="
-    PATH = r"F:\games"
+    PATH = r"E:\games"
     path = os.path.abspath(os.path.dirname(__file__)) + "\\"
     aapt_path = path + "tools\\aapt.exe"  #解析工具aapt.exe地址
     apk_path = PATH
@@ -76,8 +76,10 @@ if __name__=='__main__':
     image_path_list =  FileUtilty.all_path(PATH,postfix)
     #遍历图片并修改大小
     for image_path in image_path_list:
-        print(image_path)
-        FileUtilty.change_imaeg_size(image_path)
+        try:
+            FileUtilty.change_imaeg_size(image_path)
+        finally:
+            pass
    # getAppBaseInfo(aapt_path, apk_path)
 
    #be =  BeautifulPicture()

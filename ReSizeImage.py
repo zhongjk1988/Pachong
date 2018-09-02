@@ -7,7 +7,7 @@ import FileUtilty
 
 def main():
     postfix = [".jpg",".png"]  # 设置要保存的文件格式
-    image_path_list =  FileUtilty.all_path(r"F:\新建文件夹\待上\外\20180829",postfix)
+    image_path_list =  FileUtilty.all_path("E:\games",postfix)
 
     for image_path in image_path_list:
         print(image_path)
