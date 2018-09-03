@@ -58,7 +58,8 @@ class get_apk_pakageName():
 
 if __name__=='__main__':
     GOOGLE_PATH = "https://play.google.com/store/apps/details?id="
-    PATH = r"E:\games"
+    zh_CH = "&amp&hl=zh_CH"
+    PATH = r"F:\games"
     path = os.path.abspath(os.path.dirname(__file__)) + "\\"
     aapt_path = path + "tools\\aapt.exe"  #解析工具aapt.exe地址
     apk_path = PATH
@@ -67,7 +68,7 @@ if __name__=='__main__':
     beautifulPicture =  PachongGoogle.BeautifulPicture()
     for key,path in apk_info.items():
         if key !="":
-            url = GOOGLE_PATH+key
+            url = GOOGLE_PATH+key+zh_CH
             beautifulPicture.get_pic(url,path)
 
     #最后改图片大小
