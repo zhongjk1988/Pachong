@@ -35,6 +35,15 @@ def change_imaeg_size(path_name):
         if y != x:
             out = im.resize((x_s,y_s),PIL.Image.ANTIALIAS) #resize image with high-quality
             out.save(outfile)
+        if y == x:
+            if str_name == ".png":
+                im = im.convert('RGB')
+            out = im.resize((32,32),PIL.Image.ANTIALIAS) #resize image with high-quality
+            out.save(str_path+"32"+".jpg")
+            out = im.resize((64,64),PIL.Image.ANTIALIAS) #resize image with high-quality
+            out.save(str_path+"64"+".jpg")
+            out = im.resize((128,128),PIL.Image.ANTIALIAS) #resize image with high-quality
+            out.save(str_path+"128"+".jpg")
     except Exception as e:
         print("图片损坏")
         pass
